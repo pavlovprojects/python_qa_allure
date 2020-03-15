@@ -7,3 +7,8 @@ def browser(request):
     request.addfinalizer(bro.quit)
     return bro
 
+@pytest.fixture
+def remote(request):
+    bro = webdriver.Chrome()
+    request.addfinalizer(bro.quit)
+    return bro
