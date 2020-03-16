@@ -66,8 +66,8 @@ def browser(request):
                               attachment_type=allure.attachment_type.TEXT)
         else:
             # Удаляем данные теста
-            if url_data_exists(video_url): requests.delete(url=log_url)
-            if url_data_exists(log_url): requests.delete(url=video_url)
+            if url_data_exists(video_url): requests.delete(url=video_url)
+            if url_data_exists(log_url): requests.delete(url=log_url)
 
     allure.attach(name=driver.session_id,
                   body=str(driver.desired_capabilities),
